@@ -13,7 +13,7 @@ A CBT first-aid chatbot for university students: a rule-based safety check and f
 3. Before clicking Deploy, open Environment Variables and add `GROQ_API_KEY` with the key. Deploy.
 4. If you add the key later, redeploy so it is picked up.
 
-Optional env vars: `GROQ_MODEL` (default `llama-3.1-8b-instant`), `ALLOWED_ORIGIN` (lock the API to your site).
+Optional env vars: `GROQ_MODEL` (default `openai/gpt-oss-120b`), `ALLOWED_ORIGIN` (lock the API to your site).
 
 Never put the key in the code or commit it. Without a key the app still works with the rule-based replies.
 

@@ -32,7 +32,7 @@ const U = c => ({ role: 'user', content: c });
   const sentBody = JSON.parse(sent.body);
   check('normal message returns AI reply', r.o.source === 'ai' && calls === 1);
   check('key sent only in auth header', sent.headers.Authorization === 'Bearer test-key-123' && !JSON.stringify(r).includes('test-key-123'));
-  check('system prompt first, capped tokens', sentBody.messages[0].role === 'system' && sentBody.max_tokens === 220);
+  check('system prompt first, capped tokens', sentBody.messages[0].role === 'system' && sentBody.max_completion_tokens === 800);
   global.__out = 'Try 50 mg of this tablet'; r = await call({ messages: [U('I feel low')] });
   check('unsafe model output replaced by fallback', r.o.fallback === true);
   global.fetch = async () => { throw new Error('network'); }; r = await call({ messages: [U('hello there')] });
