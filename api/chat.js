@@ -1,5 +1,5 @@
 // Vercel serverless function. The Groq key lives ONLY in the GROQ_API_KEY environment variable.
-const CRISIS = /(kill myself|suicid|end my life|want to die|wanna die|hurt myself|harm myself|self[- ]?harm|no reason to live|better off dead|don't want to (live|be here)|can't go on|cut myself)/;
+const CRISIS = /(kill(ing)? myself|take my (own )?life|suicid|end (my life|it all)|want to die|wanna die|wish i (was|were) dead|hurt(ing)? myself|harm(ing)? myself|self[- ]?harm|cut(ting)? myself|no reason to live|better off dead|don't want to (live|be here|exist)|can't (go|keep) on(\s*[.!]*$| anymore| any more| like this| living))/;
 const BAD = /(\bmg\b|dosage|prescri|diagnos(e|is|ed)|overdose|\bpills?\b)/;
 const norm = t => t.toLowerCase().replace(/[’‘]/g, "'");
 const SYSTEM = `You are CalmAid, a warm, down-to-earth chat companion for university students who feel stressed, anxious, low or overwhelmed. You use simple CBT ideas, but you sound like a caring friend who listens well, not a worksheet.
